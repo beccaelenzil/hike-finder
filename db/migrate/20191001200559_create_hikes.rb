@@ -1,7 +1,6 @@
 class CreateHikes < ActiveRecord::Migration[5.2]
   def change
     create_table :hikes do |t|
-      t.integer :id
       t.string :name
       t.float :length_miles
       t.integer :elevation_gain_feet

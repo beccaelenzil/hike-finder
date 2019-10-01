@@ -5,6 +5,7 @@ HIKES = [
 
 class HikesController < ApplicationController
   def index
-    @hikes = HIKES
+    #@hikes = HIKES
+    @hikes = Hike.all
   end
 end
