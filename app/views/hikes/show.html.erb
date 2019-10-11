@@ -1,0 +1,16 @@
+<h1><%= @hike.name %></h1>
+<ul>
+  <ul>
+    <li>Length: <%= @hike.length_miles%> miles</li>
+    <li>Elevation Gain: <%= @hike.elevation_gain_feet%> feet</li>
+    <li>Max Elevation: <%= @hike.max_elevation_feet%> feet</li>
+    <li>Rating: <%= @hike.rating%> </li>
+    <li>Trailhead: <%= link_to @hike.trailhead.name, trailhead_path(@hike.trailhead_id)%> </li>
+    <li>Best Adjacent Hike: 
+    <% if @hike.best_adjacent_hike.nil? %>
+      There are no adjacent hikes in the database
+    <%else%>
+      <%= link_to @hike.best_adjacent_hike.name, hike_path(@hike.best_adjacent_hike.id)%> </li>
+    <%end%>
+    </ul>
+</ul>

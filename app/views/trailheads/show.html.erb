@@ -1,0 +1,11 @@
+<h1><%= @trailhead.name %></h1>
+<ul>
+  <li><#= Lat: @trailhead.latitude Object too large?%></li>
+  <li><#= Long: @trailhead.langitude Object too large?%></li>
+  <li>Hikes</li>
+    <ul>
+      <% @trailhead.hikes.each do |hike| %>
+      <li> <%= link_to hike.name, hike_path(hike.id) %> </li>
+      <%end%>`
+    </ul>
+</ul>

@@ -1,16 +1,16 @@
 <h1> Hikes </h1>
 
 <% @hikes.each do |hike| %>
-
+<p class = "container">
 <ul>
   <li>
-  <strong>Name: </strong><%= hike.name %>, 
+  <strong><%= link_to hike.name, hike_path(hike.id)%></strong>, 
     <ul>
-    <li>Length: <%= hike[:length_miles]%> miles</li>
-    <li>Elevation Gain: <%= hike[:elevation_gain_feet]%> feet</li>
-    <li>Max Elevation: <%= hike[:max_elevation_feet]%> feet</li>
-    <li>Rating: <%= hike[:rating]%> miles</li>
-    <li>Best Month: <%= hike[:best_month]%> </li>
+    <li>Length: <%= hike.length_miles%> miles</li>
+    <li>Elevation Gain: <%= hike.elevation_gain_feet%> feet</li>
+    <li>Max Elevation: <%= hike.max_elevation_feet%> feet</li>
+    <li>Rating: <%= hike.rating%></li>
+    <li>Trailhead: <%= link_to hike.trailhead.name, trailhead_path(hike.trailhead_id)%> </li>
     </ul>
   </li>
 </ul>
